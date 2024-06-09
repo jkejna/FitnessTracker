@@ -54,4 +54,9 @@ class ControllerTraining {
         trainingRepository.save(mappedEntity);
         return mapperTraining.toTraining(mappedEntity);
     }
+
+    @GetMapping("/distance/(distance)")
+    public List<TOTraining> getByDistance(@PathVariable("distance")double distance) {
+        return trainingService.findByDistance(distance).stream().map(mapperTraining::toTraining).collect(toList());
+    }
 }

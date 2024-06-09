@@ -7,3 +7,14 @@ spring:
   h2:
     console:
       enabled: true
+  mail:
+    host: "sandbox.smtp.mailtrap.io"
+    port: 2525
+    username: "98aa5218f8d0e0"
+    password: "2781046c33ddc6"
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true

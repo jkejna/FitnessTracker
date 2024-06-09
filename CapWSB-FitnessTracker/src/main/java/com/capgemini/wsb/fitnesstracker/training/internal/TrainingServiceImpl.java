@@ -43,4 +43,8 @@ class TrainingServiceImpl implements TrainingProvider {
         trainingRepository.save(mappedTraining);
         return mappedTraining;
     }
+
+    public List<Training> findByDistance(final double distance) {
+        return trainingRepository.findAll().stream().filter(training -> training.getDistance() == distance).toList();
+    }
 }
